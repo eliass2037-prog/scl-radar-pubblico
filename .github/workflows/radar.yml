@@ -1,0 +1,33 @@
+
+name: Aggiorna radar Locarno
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica repository
+        uses: actions/checkout@v4
+
+      - name: Installa librerie
+        run: python3 -m pip install h5py pyproj
+
+      - name: Aggiorna dati radar
+        run: python3 radar_locarno.py
+
+      - name: Pubblica radar.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add radar.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Aggiornamento radar MeteoSvizzera"
+            git push
+          fi
