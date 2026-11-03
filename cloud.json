@@ -1,9 +1,6 @@
 {
-  "status": "ok",
-  "source": "EUMETSAT MSG Cloud Mask",
-  "timestamp": 1793716200,
-  "cloud_percent": 100.0,
-  "valid_pixels": 14400,
-  "area": "Locarno / Lago Maggiore",
-  "method": "cloud mask area fraction; not optical cloud fraction"
+  "status": "unavailable",
+  "source": "EUMETSAT RSS-CLM GRIB2",
+  "cloud_percent": null,
+  "error": "No RSS-CLM products in last four hours"
 }
