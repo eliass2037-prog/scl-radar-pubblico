@@ -93,7 +93,9 @@ def main():
             result["layers"].append(found)
 
         good = [x for x in result["layers"] if x.get("available") and x.get("map_valid_png")]
-        result["status"] = "rapid_scan_wms_verified" if good else "rapid_scan_wms_unavailable"
+        fresh = [x for x in good if x.get("scan_time_utc") and 0 <= (datetime.now(timezone.utc) - datetime.fromisoformat(x["scan_time_utc"])).total_seconds() <= 45 * 60]
+        result["status"] = "rapid_scan_fresh" if fresh else ("rapid_scan_stale" if good else "rapid_scan_wms_unavailable")
+        result["fresh_layers"] = [x["name"] for x in fresh]
         result["usable_layers"] = [x["name"] for x in good]
         result["recommended_day_layer"] = next((x["name"] for x in good if "naturalenhncd" in x["name"]), None)
         result["recommended_fallback_layer"] = next((x["name"] for x in good if "ir039" in x["name"]), None)
