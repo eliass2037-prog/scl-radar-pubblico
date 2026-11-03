@@ -1,5 +1,9 @@
 name: EUMETSAT RSS-CLM GRIB2 Locarno
 on:
+  push:
+    paths:
+      - 'rss_clm_locarno.py'
+      - '.github/workflows/rss-clm-locarno.yml'
   workflow_dispatch:
   schedule:
     - cron: '*/10 * * * *'
