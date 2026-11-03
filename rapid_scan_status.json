@@ -1,5 +1,4 @@
 {
-  "checked_utc": "2026-11-03T14:18:26.547413+00:00",
   "source": "EUMETSAT EUMETView MSG Rapid Scan",
   "service": "MSG RSS SEVIRI",
   "nominal_cadence_minutes": 5,
@@ -20,7 +19,6 @@
         }
       ],
       "scan_time_utc": "2026-11-03T08:55:00+00:00",
-      "age_minutes": 323.5,
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -39,7 +37,6 @@
         }
       ],
       "scan_time_utc": "2026-11-03T08:55:00+00:00",
-      "age_minutes": 323.5,
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -58,7 +55,6 @@
         }
       ],
       "scan_time_utc": "2026-11-03T08:55:00+00:00",
-      "age_minutes": 323.5,
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -77,7 +73,6 @@
         }
       ],
       "scan_time_utc": "2026-11-03T08:55:00+00:00",
-      "age_minutes": 323.5,
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
