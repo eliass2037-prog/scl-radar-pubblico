@@ -1,5 +1,9 @@
 {
-  "status": "unavailable",
+  "status": "ok",
   "source": "EUMETSAT MSG Cloud Mask",
-  "error": "satellite image is stale"
+  "timestamp": 1793709000,
+  "cloud_percent": 100.0,
+  "valid_pixels": 14400,
+  "area": "Locarno / Lago Maggiore",
+  "method": "cloud mask area fraction; not optical cloud fraction"
 }
