@@ -1,5 +1,9 @@
 name: Diagnose EUMETSAT Rapid Scan Cloud Mask
 on:
+  push:
+    paths:
+      - 'rapid_scan_diagnostic.py'
+      - '.github/workflows/rapid-scan-diagnostic.yml'
   workflow_dispatch:
   schedule:
     - cron: '*/15 * * * *'
