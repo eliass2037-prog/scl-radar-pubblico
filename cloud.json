@@ -1,7 +1,7 @@
 {
   "status": "ok",
   "source": "EUMETSAT MSG Cloud Mask",
-  "timestamp": 1793712600,
+  "timestamp": 1793716200,
   "cloud_percent": 100.0,
   "valid_pixels": 14400,
   "area": "Locarno / Lago Maggiore",
