@@ -67,7 +67,7 @@ def main():
                             "nearestValue": c.attrib.get("nearestValue"),
                             "value": (c.text or "")[-500:]
                         })
-                found = {"name": name, "title": title, "time": dims}
+                found = {"name": name, "title": title, "time": dims}\n                if dims and dims[0].get("default"):\n                    scan = datetime.fromisoformat(dims[0]["default"].replace("Z", "+00:00"))\n                    found["scan_time_utc"] = scan.isoformat()\n                    found["age_minutes"] = round((datetime.now(timezone.utc) - scan).total_seconds() / 60, 1)
                 break
             if not found:
                 result["layers"].append({"name": target, "available": False})
