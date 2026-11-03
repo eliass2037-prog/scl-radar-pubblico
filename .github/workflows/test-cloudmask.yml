@@ -1,0 +1,22 @@
+
+name: Test Cloud Mask Locarno
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-satellite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Scarica repository
+        uses: actions/checkout@v4
+
+      - name: Installa librerie
+        run: python3 -m pip install requests pillow
+
+      - name: Verifica dati satellitari
+        run: python3 test_cloudmask_locarno.py
