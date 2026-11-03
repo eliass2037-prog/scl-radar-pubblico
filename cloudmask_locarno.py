@@ -30,10 +30,10 @@ def run():
  dt=datetime.fromisoformat(stamp.replace('Z','+00:00'))
  age=abs((datetime.now(timezone.utc)-dt).total_seconds())
 if age>60*60:raise ValueError('satellite image is stale')
- # Approximately 11 km x 9 km around the SCL lakefront; 400x400 pixels.
- png=fetch({'SERVICE':'WMS','VERSION':'1.1.1','REQUEST':'GetMap','LAYERS':LAYER,
-  'STYLES':'','FORMAT':'image/png','TRANSPARENT':'FALSE','SRS':'EPSG:4326',
-  'BBOX':'8.73,46.13,8.87,46.21','WIDTH':'400','HEIGHT':'400','TIME':stamp})
+    # Download satellite image
+    png=fetch({'SERVICE':'WMS','VERSION':'1.1.1','REQUEST':'GetMap','LAYERS':LAYER,
+               'STYLES':'','FORMAT':'image/png','TRANSPARENT':'FALSE','SRS':'EPSG:4326',
+               'BBOX':'8.73,46.13,8.87,46.21','WIDTH':'400','HEIGHT':'400','TIME':stamp})
  im=Image.open(io.BytesIO(png)).convert('RGB')
  cloudy=clear=0
  # Sample only inner 60% to avoid edge artifacts. Pure white: cloud;
