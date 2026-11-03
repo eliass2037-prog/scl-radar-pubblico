@@ -29,7 +29,7 @@ def run():
  if not stamp:raise ValueError('no satellite timestamp')
  dt=datetime.fromisoformat(stamp.replace('Z','+00:00'))
  age=abs((datetime.now(timezone.utc)-dt).total_seconds())
- if age>25*60:raise ValueError('satellite image is stale')
+if age>60*60:raise ValueError('satellite image is stale')
  # Approximately 11 km x 9 km around the SCL lakefront; 400x400 pixels.
  png=fetch({'SERVICE':'WMS','VERSION':'1.1.1','REQUEST':'GetMap','LAYERS':LAYER,
   'STYLES':'','FORMAT':'image/png','TRANSPARENT':'FALSE','SRS':'EPSG:4326',
