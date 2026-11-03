@@ -103,7 +103,7 @@ def main():
         result["status"] = "error"
         result["error"] = str(exc)[:500]
 
-    OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
