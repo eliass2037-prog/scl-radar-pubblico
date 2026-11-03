@@ -1,0 +1,76 @@
+{
+  "checked_utc": "2026-11-03T14:13:36.755287+00:00",
+  "collection": "EO:EUM:DAT:MSG:RSS-CLM",
+  "expected_cadence": "5 minutes (EUMETSAT RSS-CLM catalogue)",
+  "status": "rss_catalogue_products_found",
+  "cloud_percent": null,
+  "note": "Catalogue/WMS diagnostic only; no cloud percentage is calculated.",
+  "catalogue_http_status": 200,
+  "catalogue_content_type": "application/json",
+  "catalogue_response_keys": [
+    "id",
+    "type",
+    "totalResults",
+    "itemsPerPage",
+    "startIndex",
+    "queries",
+    "properties",
+    "features"
+  ],
+  "catalogue_records_found": 5,
+  "latest_products": [
+    {
+      "id": "MSG4-SEVI-MSGCLMK-0100-0100-20261103085500.000000000Z-NA"
+    },
+    {
+      "id": "MSG4-SEVI-MSGCLMK-0100-0100-20261103085000.000000000Z-NA"
+    },
+    {
+      "id": "MSG4-SEVI-MSGCLMK-0100-0100-20261103084500.000000000Z-NA"
+    },
+    {
+      "id": "MSG4-SEVI-MSGCLMK-0100-0100-20261103084000.000000000Z-NA"
+    },
+    {
+      "id": "MSG4-SEVI-MSGCLMK-0100-0100-20261103083500.000000000Z-NA"
+    }
+  ],
+  "catalogue_status": "products_found",
+  "wms_http_status": 200,
+  "wms_matching_layers": [
+    {
+      "name": "msg_fes:clm",
+      "title": "Cloud Mask - MSG - 0 degree"
+    },
+    {
+      "name": "msg_iodc:clm",
+      "title": "Cloud Mask - MSG - Indian Ocean"
+    },
+    {
+      "name": "msg_rss:ir039_nrt",
+      "title": "Rapid Scan High Rate SEVIRI IR 3.9 - MSG"
+    },
+    {
+      "name": "eps:osisaf_avhrr_l3_sst",
+      "title": "Global L3C AVHRR Sea Surface Temperature (GHRSST) - Metop"
+    },
+    {
+      "name": "msg_fes:rdt",
+      "title": "Rapidly Developing Thunderstorms - MSG - 0 degree"
+    },
+    {
+      "name": "msg_rss:rgb_microphysics_nrt",
+      "title": "Rapid Scan High Rate SEVIRI RGB Day Microphysics - MSG"
+    },
+    {
+      "name": "msg_rss:rgb_natural_nrt",
+      "title": "Rapid Scan High Rate SEVIRI RGB Natural Colour - MSG"
+    },
+    {
+      "name": "msg_rss:rgb_naturalenhncd_nrt",
+      "title": "Rapid Scan High Rate SEVIRI RGB Natural Colour Enhncd. - MSG"
+    }
+  ],
+  "wms_rss_layer_found": true,
+  "wms_status": "capabilities_received"
+}\n
