@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-03T14:16:08.903320+00:00",
+  "checked_utc": "2026-11-03T14:18:26.547413+00:00",
   "source": "EUMETSAT EUMETView MSG Rapid Scan",
   "service": "MSG RSS SEVIRI",
   "nominal_cadence_minutes": 5,
@@ -19,6 +19,8 @@
           "value": "2020-08-01T00:00:00.000Z/2026-11-03T08:55:00.000Z/PT5M"
         }
       ],
+      "scan_time_utc": "2026-11-03T08:55:00+00:00",
+      "age_minutes": 323.5,
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -36,6 +38,8 @@
           "value": "2020-08-01T00:00:00.000Z/2026-11-03T08:55:00.000Z/PT5M"
         }
       ],
+      "scan_time_utc": "2026-11-03T08:55:00+00:00",
+      "age_minutes": 323.5,
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -53,6 +57,8 @@
           "value": "2020-08-01T00:00:00.000Z/2026-11-03T08:55:00.000Z/PT5M"
         }
       ],
+      "scan_time_utc": "2026-11-03T08:55:00+00:00",
+      "age_minutes": 323.5,
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -70,6 +76,8 @@
           "value": "2020-02-12T14:40:00.000Z/2026-11-03T08:55:00.000Z/PT5M"
         }
       ],
+      "scan_time_utc": "2026-11-03T08:55:00+00:00",
+      "age_minutes": 323.5,
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
