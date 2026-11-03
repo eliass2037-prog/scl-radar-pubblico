@@ -1,8 +1,7 @@
 name: Satellite Cloud Mask Locarno
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/10 * * * *'
+  # Legacy WMS color interpretation disabled; use RSS-CLM GRIB2 workflow.
 permissions:
   contents: write
 jobs:
