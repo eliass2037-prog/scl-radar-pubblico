@@ -70,5 +70,5 @@ def run():
 if __name__=="__main__":
     try: result=run()
     except Exception as exc: result={"status":"unavailable","source":"EUMETSAT RSS-CLM GRIB2","cloud_percent":None,"error":str(exc)[:240]}
-    OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(result))
