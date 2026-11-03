@@ -1,0 +1,5 @@
+{
+  "status": "unavailable",
+  "source": "EUMETSAT MSG Cloud Mask",
+  "error": "satellite image is stale"
+}
