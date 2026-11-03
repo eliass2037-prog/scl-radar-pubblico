@@ -1,0 +1,24 @@
+name: Diagnose EUMETSAT Rapid Scan Cloud Mask
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check official RSS-CLM collection and WMS layers
+        run: python3 rapid_scan_diagnostic.py
+      - name: Publish diagnostic status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rapid_scan_status.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Rapid Scan availability diagnostic"
+            git pull --rebase
+            git push
+          fi
