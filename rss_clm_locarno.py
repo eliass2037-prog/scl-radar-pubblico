@@ -23,7 +23,7 @@ def run():
     if not candidates:
         raise RuntimeError("No RSS-CLM products in last four hours")
     def sensing(product):
-        match = re.search(r"(20\\d{12})", str(product))
+        match = re.search(r"(20\d{12})", str(product))
         if not match: return datetime.min.replace(tzinfo=timezone.utc)
         return datetime.strptime(match.group(1), "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
     product = max(candidates, key=sensing)
