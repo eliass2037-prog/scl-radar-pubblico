@@ -4,7 +4,7 @@
   "nominal_cadence_minutes": 5,
   "area": "Locarno / Lago Maggiore",
   "bbox": "8.45,45.95,9.20,46.42",
-  "status": "rapid_scan_wms_verified",
+  "status": "rapid_scan_stale",
   "cloud_percent": null,
   "layers": [
     {
@@ -80,6 +80,7 @@
       "map_valid_png": true
     }
   ],
+  "fresh_layers": [],
   "usable_layers": [
     "msg_rss:rgb_naturalenhncd_nrt",
     "msg_rss:rgb_natural_nrt",
