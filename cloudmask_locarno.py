@@ -30,8 +30,8 @@ def run():
  dt=datetime.fromisoformat(stamp.replace('Z','+00:00'))
  age=abs((datetime.now(timezone.utc)-dt).total_seconds())
 if age>60*60:raise ValueError('satellite image is stale')
-    # Download satellite image
-    png=fetch({'SERVICE':'WMS','VERSION':'1.1.1','REQUEST':'GetMap','LAYERS':LAYER,
+   # Download satellite image
+   png=fetch({'SERVICE':'WMS','VERSION':'1.1.1','REQUEST':'GetMap','LAYERS':LAYER,
                'STYLES':'','FORMAT':'image/png','TRANSPARENT':'FALSE','SRS':'EPSG:4326',
                'BBOX':'8.73,46.13,8.87,46.21','WIDTH':'400','HEIGHT':'400','TIME':stamp})
  im=Image.open(io.BytesIO(png)).convert('RGB')
