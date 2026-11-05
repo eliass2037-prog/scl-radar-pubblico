@@ -13,18 +13,54 @@
       "time": [
         {
           "tag": "Dimension",
-          "default": "2026-11-05T21:10:00Z",
+          "default": "2026-11-05T22:00:00Z",
           "nearestValue": "1",
-          "value": "2020-08-01T00:00:00.000Z/2026-11-05T21:10:00.000Z/PT5M"
+          "value": "2020-08-01T00:00:00.000Z/2026-11-05T22:00:00.000Z/PT5M"
         }
       ],
-      "scan_time_utc": "2026-11-05T21:10:00+00:00",
+      "scan_time_utc": "2026-11-05T22:00:00+00:00",
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
       "map_bytes": 57524,
       "map_valid_png": true
+    },
+    {
+      "name": "msg_rss:rgb_natural_nrt",
+      "title": "Rapid Scan High Rate SEVIRI RGB Natural Colour - MSG",
+      "time": [
+        {
+          "tag": "Dimension",
+          "default": "2026-11-05T22:00:00Z",
+          "nearestValue": "1",
+          "value": "2020-08-01T00:00:00.000Z/2026-11-05T22:00:00.000Z/PT5M"
+        }
+      ],
+      "scan_time_utc": "2026-11-05T22:00:00+00:00",
+      "available": true,
+      "map_http_status": 200,
+      "map_content_type": "image/png",
+      "map_bytes": 56819,
+      "map_valid_png": true
+    },
+    {
+      "name": "msg_rss:rgb_microphysics_nrt",
+      "title": "Rapid Scan High Rate SEVIRI RGB Day Microphysics - MSG",
+      "time": [
+        {
+          "tag": "Dimension",
+          "default": "2026-11-05T22:00:00Z",
+          "nearestValue": "1",
+          "value": "2020-08-01T00:00:00.000Z/2026-11-05T22:00:00.000Z/PT5M"
+        }
+      ],
+      "scan_time_utc": "2026-11-05T22:00:00+00:00",
+      "available": true,
+      "map_http_status": 200,
+      "map_content_type": "image/png",
+      "map_bytes": 97035,
+      "map_valid_png": true
     }
   ],
-  "error": "HTTP Error 504: Gateway Time-out"
+  "error": "HTTP Error 500: Internal Server Error"
 }
