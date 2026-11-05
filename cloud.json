@@ -2,5 +2,5 @@
   "status": "unavailable",
   "source": "EUMETSAT RSS-CLM GRIB2",
   "cloud_percent": null,
-  "error": "No RSS-CLM products in last four hours"
+  "error": "Too few valid local cloud-mask pixels"
 }
