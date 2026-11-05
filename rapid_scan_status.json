@@ -4,7 +4,7 @@
   "nominal_cadence_minutes": 5,
   "area": "Locarno / Lago Maggiore",
   "bbox": "8.45,45.95,9.20,46.42",
-  "status": "rapid_scan_stale",
+  "status": "rapid_scan_fresh",
   "cloud_percent": null,
   "layers": [
     {
@@ -13,12 +13,12 @@
       "time": [
         {
           "tag": "Dimension",
-          "default": "2026-11-03T08:55:00Z",
+          "default": "2026-11-05T09:45:00Z",
           "nearestValue": "1",
-          "value": "2020-08-01T00:00:00.000Z/2026-11-03T08:55:00.000Z/PT5M"
+          "value": "2020-08-01T00:00:00.000Z/2026-11-05T09:45:00.000Z/PT5M"
         }
       ],
-      "scan_time_utc": "2026-11-03T08:55:00+00:00",
+      "scan_time_utc": "2026-11-05T09:45:00+00:00",
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -31,12 +31,12 @@
       "time": [
         {
           "tag": "Dimension",
-          "default": "2026-11-03T08:55:00Z",
+          "default": "2026-11-05T09:45:00Z",
           "nearestValue": "1",
-          "value": "2020-08-01T00:00:00.000Z/2026-11-03T08:55:00.000Z/PT5M"
+          "value": "2020-08-01T00:00:00.000Z/2026-11-05T09:45:00.000Z/PT5M"
         }
       ],
-      "scan_time_utc": "2026-11-03T08:55:00+00:00",
+      "scan_time_utc": "2026-11-05T09:45:00+00:00",
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -49,12 +49,12 @@
       "time": [
         {
           "tag": "Dimension",
-          "default": "2026-11-03T08:55:00Z",
+          "default": "2026-11-05T09:45:00Z",
           "nearestValue": "1",
-          "value": "2020-08-01T00:00:00.000Z/2026-11-03T08:55:00.000Z/PT5M"
+          "value": "2020-08-01T00:00:00.000Z/2026-11-05T09:45:00.000Z/PT5M"
         }
       ],
-      "scan_time_utc": "2026-11-03T08:55:00+00:00",
+      "scan_time_utc": "2026-11-05T09:45:00+00:00",
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -67,12 +67,12 @@
       "time": [
         {
           "tag": "Dimension",
-          "default": "2026-11-03T08:55:00Z",
+          "default": "2026-11-05T09:45:00Z",
           "nearestValue": "1",
-          "value": "2020-02-12T14:40:00.000Z/2026-11-03T08:55:00.000Z/PT5M"
+          "value": "2020-02-12T14:40:00.000Z/2026-11-05T09:45:00.000Z/PT5M"
         }
       ],
-      "scan_time_utc": "2026-11-03T08:55:00+00:00",
+      "scan_time_utc": "2026-11-05T09:45:00+00:00",
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -80,7 +80,12 @@
       "map_valid_png": true
     }
   ],
-  "fresh_layers": [],
+  "fresh_layers": [
+    "msg_rss:rgb_naturalenhncd_nrt",
+    "msg_rss:rgb_natural_nrt",
+    "msg_rss:rgb_microphysics_nrt",
+    "msg_rss:ir039_nrt"
+  ],
   "usable_layers": [
     "msg_rss:rgb_naturalenhncd_nrt",
     "msg_rss:rgb_natural_nrt",
