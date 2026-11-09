@@ -1,6 +1,11 @@
 {
-  "status": "unavailable",
-  "source": "EUMETSAT RSS-CLM GRIB2",
-  "cloud_percent": null,
-  "error": "Too few valid local cloud-mask pixels; see local_grib diagnostics in Actions logs"
+  "status": "ok",
+  "source": "EUMETSAT MSG CLM GRIB2",
+  "timestamp": 1794251700,
+  "cloud_percent": 26.3,
+  "valid_pixels": 19,
+  "area": "Locarno / Lago Maggiore",
+  "method": "GRIB2 class 2 cloudy, classes 0/1 clear; 10 km radius",
+  "pixel_class": 0,
+  "age_minutes_at_publication": 26.5
 }
