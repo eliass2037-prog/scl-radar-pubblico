@@ -2,5 +2,5 @@
   "status": "unavailable",
   "source": "EUMETSAT RSS-CLM GRIB2",
   "cloud_percent": null,
-  "error": "Too few valid local cloud-mask pixels"
+  "error": "Too few valid local cloud-mask pixels; see local_grib diagnostics in Actions logs"
 }
