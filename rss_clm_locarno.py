@@ -28,6 +28,7 @@ def run():
         return datetime.strptime(match.group(1), "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
     product = max(candidates, key=sensing)
     observed = sensing(product)
+    print(json.dumps({"diagnostic":"selected_product","collection":COLLECTION,"product":str(product),"candidate_count":len(candidates),"observed_utc":observed.isoformat()}),flush=True)
     age = (now-observed).total_seconds()/60
     if age < -5 or age > MAX_AGE_MIN:
         raise RuntimeError(f"RSS-CLM is stale: {age:.1f} minutes")
@@ -55,6 +56,11 @@ def run():
                 lons=eccodes.codes_get_array(gid,"longitudes")
                 vals=eccodes.codes_get_array(gid,"values")
                 if not (len(lats)==len(lons)==len(vals)): raise RuntimeError("GRIB coordinate mismatch")
+                metadata={}
+                for field in ("gridType","shortName","name","typeOfLevel","numberOfPoints","latitudeOfFirstGridPointInDegrees","longitudeOfFirstGridPointInDegrees","latitudeOfLastGridPointInDegrees","longitudeOfLastGridPointInDegrees"):
+                    try: metadata[field]=str(eccodes.codes_get(gid,field))
+                    except Exception: pass
+                print(json.dumps({"diagnostic":"grib_metadata","fields":metadata}),flush=True)
                 # Local geographic radius, approximate kilometers; ignore missing/out-of-range.
                 import numpy as np
                 lat=np.asarray(lats);lon=np.asarray(lons);v=np.asarray(vals)
