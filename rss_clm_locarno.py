@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""EUMETSAT RSS-CLM -> validated cloud.json. Never infer clear skies on errors."""
+"""EUMETSAT full-disk MSG CLM -> validated cloud.json. Never infer clear skies on errors."""
 import io, json, os, re, sys, zipfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 OUT = Path("cloud.json")
-COLLECTION = "EO:EUM:DAT:MSG:RSS-CLM"
+COLLECTION = "EO:EUM:DAT:MSG:CLM"
 LAT, LON = 46.17, 8.80
 MAX_AGE_MIN = 45
 
@@ -21,7 +21,7 @@ def run():
     now = datetime.now(timezone.utc)
     candidates = list(collection.search(dtstart=now-timedelta(hours=4), dtend=now))
     if not candidates:
-        raise RuntimeError("No RSS-CLM products in last four hours")
+        raise RuntimeError("No MSG CLM products in last four hours")
     def sensing(product):
         match = re.search(r"(20\d{12})", str(product))
         if not match: return datetime.min.replace(tzinfo=timezone.utc)
@@ -31,7 +31,7 @@ def run():
     print(json.dumps({"diagnostic":"selected_product","collection":COLLECTION,"product":str(product),"candidate_count":len(candidates),"observed_utc":observed.isoformat()}),flush=True)
     age = (now-observed).total_seconds()/60
     if age < -5 or age > MAX_AGE_MIN:
-        raise RuntimeError(f"RSS-CLM is stale: {age:.1f} minutes")
+        raise RuntimeError(f"MSG CLM is stale: {age:.1f} minutes")
     stream = io.BytesIO()
     with product.open() as src:
         while True:
@@ -80,9 +80,9 @@ def run():
                 region=(d<=10**2)&valid
                 if int(region.sum())<10: raise RuntimeError("Too few valid local cloud-mask pixels; see local_grib diagnostics in Actions logs")
                 cloud=float(np.mean(v[region]==2)*100)
-                nearest=int(np.argmin(d))
-                if float(d[nearest])>25: raise RuntimeError("No pixel near Locarno")
-                return {"status":"ok","source":"EUMETSAT RSS-CLM GRIB2","timestamp":int(observed.timestamp()),"cloud_percent":round(cloud,1),"valid_pixels":int(region.sum()),"area":"Locarno / Lago Maggiore","method":"GRIB2 class 2 cloudy, classes 0/1 clear; 10 km radius","pixel_class":int(v[nearest]),"age_minutes_at_publication":round(age,1)}
+                nearest=int(np.flatnonzero(region)[np.argmin(d[region])])
+                if float(d[nearest])>25: raise RuntimeError("No valid pixel near Locarno")
+                return {"status":"ok","source":"EUMETSAT MSG CLM GRIB2","timestamp":int(observed.timestamp()),"cloud_percent":round(cloud,1),"valid_pixels":int(region.sum()),"area":"Locarno / Lago Maggiore","method":"GRIB2 class 2 cloudy, classes 0/1 clear; 10 km radius","pixel_class":int(v[nearest]),"age_minutes_at_publication":round(age,1)}
             finally: eccodes.codes_release(gid)
 
 if __name__=="__main__":
