@@ -59,8 +59,20 @@ def run():
                 import numpy as np
                 lat=np.asarray(lats);lon=np.asarray(lons);v=np.asarray(vals)
                 d=((lat-LAT)*111)**2+((lon-LON)*77)**2
-                region=(d<=10**2)&np.isfinite(v)&np.isin(v,[0,1,2])
-                if int(region.sum())<10: raise RuntimeError("Too few valid local cloud-mask pixels")
+                valid=np.isfinite(v)&np.isin(v,[0,1,2])
+                # Diagnostics from the actual GRIB, visible in GitHub Actions logs.
+                # Do not publish an unverified cloud percentage.
+                for radius in (5,10,15,20,30):
+                    inside=d<=radius**2
+                    classes={str(cls):int(np.count_nonzero(inside & np.isfinite(v) & (v==cls))) for cls in (0,1,2,3)}
+                    print(json.dumps({"diagnostic":"local_grib","radius_km":radius,"total_pixels":int(inside.sum()),"valid_pixels":int(np.count_nonzero(inside&valid)),"classes":classes}),flush=True)
+                if np.any(valid):
+                    idx=np.flatnonzero(valid)[np.argmin(d[valid])]
+                    print(json.dumps({"diagnostic":"nearest_valid","distance_km":round(float(np.sqrt(d[idx])),2),"latitude":round(float(lat[idx]),4),"longitude":round(float(lon[idx]),4),"class":int(v[idx])}),flush=True)
+                else:
+                    print(json.dumps({"diagnostic":"no_valid_pixels_in_grib","finite_pixels":int(np.count_nonzero(np.isfinite(v)))}),flush=True)
+                region=(d<=10**2)&valid
+                if int(region.sum())<10: raise RuntimeError("Too few valid local cloud-mask pixels; see local_grib diagnostics in Actions logs")
                 cloud=float(np.mean(v[region]==2)*100)
                 nearest=int(np.argmin(d))
                 if float(d[nearest])>25: raise RuntimeError("No pixel near Locarno")
