@@ -3,6 +3,12 @@ name: Aggiorna radar Locarno
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+
+concurrency:
+  group: radar-locarno
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -27,5 +33,6 @@ jobs:
           git add radar.json
           if ! git diff --cached --quiet; then
             git commit -m "Aggiornamento radar MeteoSvizzera"
+            git pull --rebase
             git push
           fi
