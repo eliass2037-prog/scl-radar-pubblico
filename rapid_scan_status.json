@@ -4,7 +4,7 @@
   "nominal_cadence_minutes": 5,
   "area": "Locarno / Lago Maggiore",
   "bbox": "8.45,45.95,9.20,46.42",
-  "status": "error",
+  "status": "rapid_scan_fresh",
   "cloud_percent": null,
   "layers": [
     {
@@ -13,12 +13,12 @@
       "time": [
         {
           "tag": "Dimension",
-          "default": "2026-11-10T22:25:00Z",
+          "default": "2026-11-10T23:05:00Z",
           "nearestValue": "1",
-          "value": "2020-08-01T00:00:00.000Z/2026-11-10T22:25:00.000Z/PT5M"
+          "value": "2020-08-01T00:00:00.000Z/2026-11-10T23:05:00.000Z/PT5M"
         }
       ],
-      "scan_time_utc": "2026-11-10T22:25:00+00:00",
+      "scan_time_utc": "2026-11-10T23:05:00+00:00",
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
@@ -31,18 +31,67 @@
       "time": [
         {
           "tag": "Dimension",
-          "default": "2026-11-10T22:25:00Z",
+          "default": "2026-11-10T23:05:00Z",
           "nearestValue": "1",
-          "value": "2020-08-01T00:00:00.000Z/2026-11-10T22:25:00.000Z/PT5M"
+          "value": "2020-08-01T00:00:00.000Z/2026-11-10T23:05:00.000Z/PT5M"
         }
       ],
-      "scan_time_utc": "2026-11-10T22:25:00+00:00",
+      "scan_time_utc": "2026-11-10T23:05:00+00:00",
       "available": true,
       "map_http_status": 200,
       "map_content_type": "image/png",
       "map_bytes": 56819,
       "map_valid_png": true
+    },
+    {
+      "name": "msg_rss:rgb_microphysics_nrt",
+      "title": "Rapid Scan High Rate SEVIRI RGB Day Microphysics - MSG",
+      "time": [
+        {
+          "tag": "Dimension",
+          "default": "2026-11-10T23:05:00Z",
+          "nearestValue": "1",
+          "value": "2020-08-01T00:00:00.000Z/2026-11-10T23:05:00.000Z/PT5M"
+        }
+      ],
+      "scan_time_utc": "2026-11-10T23:05:00+00:00",
+      "available": true,
+      "map_http_status": 200,
+      "map_content_type": "image/png",
+      "map_bytes": 97035,
+      "map_valid_png": true
+    },
+    {
+      "name": "msg_rss:ir039_nrt",
+      "title": "Rapid Scan High Rate SEVIRI IR 3.9 - MSG",
+      "time": [
+        {
+          "tag": "Dimension",
+          "default": "2026-11-10T23:05:00Z",
+          "nearestValue": "1",
+          "value": "2020-02-12T14:40:00.000Z/2026-11-10T23:05:00.000Z/PT5M"
+        }
+      ],
+      "scan_time_utc": "2026-11-10T23:05:00+00:00",
+      "available": true,
+      "map_http_status": 200,
+      "map_content_type": "image/png",
+      "map_bytes": 21660,
+      "map_valid_png": true
     }
   ],
-  "error": "HTTP Error 500: Internal Server Error"
+  "fresh_layers": [
+    "msg_rss:rgb_naturalenhncd_nrt",
+    "msg_rss:rgb_natural_nrt",
+    "msg_rss:rgb_microphysics_nrt",
+    "msg_rss:ir039_nrt"
+  ],
+  "usable_layers": [
+    "msg_rss:rgb_naturalenhncd_nrt",
+    "msg_rss:rgb_natural_nrt",
+    "msg_rss:rgb_microphysics_nrt",
+    "msg_rss:ir039_nrt"
+  ],
+  "recommended_day_layer": "msg_rss:rgb_naturalenhncd_nrt",
+  "recommended_fallback_layer": "msg_rss:ir039_nrt"
 }
