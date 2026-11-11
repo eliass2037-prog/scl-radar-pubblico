@@ -1,7 +1,7 @@
 {
   "status": "ok",
   "source": "EUMETSAT MSG CLM GRIB2",
-  "timestamp": 1794384900,
+  "timestamp": 1794388500,
   "cloud_percent": 100.0,
   "valid_pixels": 19,
   "area": "Locarno / Lago Maggiore",
