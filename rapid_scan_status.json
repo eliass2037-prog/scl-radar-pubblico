@@ -7,5 +7,5 @@
   "status": "error",
   "cloud_percent": null,
   "layers": [],
-  "error": "HTTP Error 504: Gateway Time-out"
+  "error": "HTTP Error 500: Internal Server Error"
 }
