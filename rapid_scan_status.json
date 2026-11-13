@@ -6,25 +6,6 @@
   "bbox": "8.45,45.95,9.20,46.42",
   "status": "error",
   "cloud_percent": null,
-  "layers": [
-    {
-      "name": "msg_rss:rgb_naturalenhncd_nrt",
-      "title": "Rapid Scan High Rate SEVIRI RGB Natural Colour Enhncd. - MSG",
-      "time": [
-        {
-          "tag": "Dimension",
-          "default": "2026-11-13T07:30:00Z",
-          "nearestValue": "1",
-          "value": "2020-08-01T00:00:00.000Z/2026-11-13T07:30:00.000Z/PT5M"
-        }
-      ],
-      "scan_time_utc": "2026-11-13T07:30:00+00:00",
-      "available": true,
-      "map_http_status": 200,
-      "map_content_type": "image/png",
-      "map_bytes": 57524,
-      "map_valid_png": true
-    }
-  ],
-  "error": "HTTP Error 504: Gateway Time-out"
+  "layers": [],
+  "error": "HTTP Error 503: Service Temporarily Unavailable"
 }
