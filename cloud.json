@@ -1,6 +1,11 @@
 {
-  "status": "unavailable",
-  "source": "EUMETSAT RSS-CLM GRIB2",
-  "cloud_percent": null,
-  "error": "Could not download Product MSG3-SEVI-MSGCLMK-0100-0100-20261118201500.000000000Z-NA of Collection EO:EUM:DAT:MSG:CLM (due to a server-side error (504)"
+  "status": "ok",
+  "source": "EUMETSAT MSG CLM GRIB2",
+  "timestamp": 1795036500,
+  "cloud_percent": 36.8,
+  "valid_pixels": 19,
+  "area": "Locarno / Lago Maggiore",
+  "method": "GRIB2 class 2 cloudy, classes 0/1 clear; 10 km radius",
+  "pixel_class": 0,
+  "age_minutes_at_publication": 17.3
 }
