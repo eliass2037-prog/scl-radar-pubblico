@@ -2,5 +2,5 @@
   "status": "unavailable",
   "source": "EUMETSAT RSS-CLM GRIB2",
   "cloud_percent": null,
-  "error": "Could not download Product MSG3-SEVI-MSGCLMK-0100-0100-20261118000000.000000000Z-NA of Collection EO:EUM:DAT:MSG:CLM (due to a server-side error (504)"
+  "error": "Could not download Product MSG3-SEVI-MSGCLMK-0100-0100-20261118013000.000000000Z-NA of Collection EO:EUM:DAT:MSG:CLM (due to a server-side error (504)"
 }
