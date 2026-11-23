@@ -1,8 +1,8 @@
 {
   "localita": "Locarno",
   "precipitazioni_mm_h": 0.0,
-  "aggiornamento": "2026-11-23T20:55:00+00:00",
+  "aggiornamento": "2026-11-23T21:00:00+00:00",
   "stato": "ok",
   "fonte": "MeteoSvizzera RZC",
-  "file": "rzc263272055vl.001.h5"
+  "file": "rzc263272100vl.001.h5"
 }
